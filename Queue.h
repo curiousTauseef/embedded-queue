@@ -1,19 +1,27 @@
 #include <cstdio>
+#include <cstdlib>
 #ifndef QUEUE_H
 #define QUEUE_H
-#define FifoSize 4 /* Note to define one cell more than than the capacity you want */
+ /* Note to define one cell more than than the capacity you want */
 template <class T> class Queue
 {
 private:
     T *PUTPT;    /* Pointer of where to put next */
     T *GETPT;    /* Pointer of where to get next */
-    T Fifo[FifoSize]; /* The statically allocated fifo data */
+    T *Fifo; /* The dinamically allocated fifo data */
     int lenght;
+    int FifoSize;
 public:
-    Queue()
+    Queue(int n )
     {
-        lenght = 0 ;
-        PUTPT=GETPT=&Fifo[0]; /* Empty when PUTPT=GETPT */
+        FifoSize = n;
+        lenght = 0;
+        Fifo = (T *) malloc(FifoSize * sizeof(T));
+        PUTPT = GETPT=&Fifo[0]; /* Empty when PUTPT=GETPT */
+    }
+    ~Queue()
+    {
+        free(Fifo);
     }
     int push(T data);
     int pop(T *datapt);

@@ -4,8 +4,8 @@
 #include <cmath>
 int main()
 {
-    Queue <int> intQueue;
-    Queue <double> doubleQueue;
+    Queue <int> intQueue(3);
+    Queue <double> doubleQueue(6);
     for(int i=0 ; i<8 ; i++)
     {
         
