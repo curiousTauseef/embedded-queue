@@ -21,7 +21,11 @@ public:
     int size(){ return lenght; };
     T &operator[](int i)
     {
-        if(PUTPT >= GETPT)
+        /*
+        if(PUTPT = GETPT)
+            return GETPT[0]; //This never should happen because it means size() is zero and you're calling it
+*/
+        if(PUTPT > GETPT)
         {
             return GETPT[i];
         }
