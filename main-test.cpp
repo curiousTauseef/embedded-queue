@@ -15,25 +15,30 @@ int main()
         else
             printf("intQueue is full!\n");
            
+        /*
         suc = doubleQueue.push(i*M_PI);
         if(suc)
             printf("pushed %f in doubleQueue\n",i*M_PI);
         else
             printf("doubleQueue is full!\n");
+            */
 
     }
 
      
     int data; 
-    //int suc = intQueue.pop(&data);
+    int suc = intQueue.pop(&data);
+    printf("Poped %d\n",data);
+    suc = intQueue.pop(&data);
+    printf("Poped %d\n",data);
     intQueue.forcePush(-1);
 
-    printf("int[0]: %d\n",intQueue[0]);
+    //printf("int[0]: %d\n",intQueue[0]);
     for (int i=0 ; i<intQueue.size(); i++)
     {
         printf("int: %d\n",intQueue[i]);
     }
-    /*
+    
     for(int i=0 ; i<6 ; i++)
     {
         int data; 
@@ -43,7 +48,7 @@ int main()
         else
             printf("queue is empty!\n");
     }
-    
+    /*
     for(int i=0 ; i<6 ; i++)
     {
         double data; 
@@ -52,7 +57,7 @@ int main()
             printf("poped %f\n",data);
         else
             printf("queue is empty!\n");
-    }
-    */
+    }*/
+    
     return 0;
 }

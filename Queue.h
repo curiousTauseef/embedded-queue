@@ -21,13 +21,13 @@ public:
     int size(){ return lenght; };
     T &operator[](int i)
     {
-        if(PUTPT > GETPT)
+        if(PUTPT >= GETPT)
         {
             return GETPT[i];
         }
         else
         {
-            if(i > (&Fifo[FifoSize] - GETPT))
+            if(i >= (&Fifo[FifoSize] - GETPT))
             {
                 return Fifo[i - (&Fifo[FifoSize] - GETPT)];
             }
