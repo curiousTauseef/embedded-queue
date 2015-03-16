@@ -22,7 +22,18 @@ int main()
             printf("doubleQueue is full!\n");
 
     }
-    
+
+     
+    int data; 
+    //int suc = intQueue.pop(&data);
+    intQueue.forcePush(-1);
+
+    printf("int[0]: %d\n",intQueue[0]);
+    for (int i=0 ; i<intQueue.size(); i++)
+    {
+        printf("int: %d\n",intQueue[i]);
+    }
+    /*
     for(int i=0 ; i<6 ; i++)
     {
         int data; 
@@ -42,5 +53,6 @@ int main()
         else
             printf("queue is empty!\n");
     }
+    */
     return 0;
 }
