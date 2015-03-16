@@ -6,10 +6,10 @@ int main()
 {
     Queue <int> intQueue;
     Queue <double> doubleQueue;
-    for(int i=0 ; i<4 ; i++)
+    for(int i=0 ; i<8 ; i++)
     {
         
-        int suc = intQueue.push(i);
+        int suc = intQueue.forcePush(i);
         if(suc)
             printf("pushed %d in intQueue\n",i);
         else
